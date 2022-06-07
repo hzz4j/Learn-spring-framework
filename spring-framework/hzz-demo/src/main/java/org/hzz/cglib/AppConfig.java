@@ -1,4 +1,4 @@
-package org.hzz;
+package org.hzz.cglib;
 
 import org.springframework.context.annotation.ComponentScan;
 

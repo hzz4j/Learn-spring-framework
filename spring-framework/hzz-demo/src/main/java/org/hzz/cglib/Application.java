@@ -1,7 +1,7 @@
-package org.hzz;
+package org.hzz.cglib;
 
 
-import org.hzz.org.hzz.service.UserService;
+import org.hzz.cglib.org.hzz.service.UserService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Application {

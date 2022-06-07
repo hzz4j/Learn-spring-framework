@@ -1,4 +1,4 @@
-package org.hzz.org.hzz.service;
+package org.hzz.cglib.org.hzz.service;
 
 import org.springframework.stereotype.Component;
 

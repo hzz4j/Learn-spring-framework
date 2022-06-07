@@ -166,8 +166,10 @@ public class ReflectiveAspectJAdvisorFactory extends AbstractAspectJAdvisorFacto
 
 	private List<Method> getAdvisorMethods(Class<?> aspectClass) {
 		List<Method> methods = new ArrayList<>();
+		// 获取到所有类中除了标注@PointCut的所有方法
 		ReflectionUtils.doWithMethods(aspectClass, methods::add, adviceMethodFilter);
 		if (methods.size() > 1) {
+			// 排序
 			methods.sort(adviceMethodComparator);
 		}
 		return methods;
@@ -203,7 +205,7 @@ public class ReflectiveAspectJAdvisorFactory extends AbstractAspectJAdvisorFacto
 			int declarationOrderInAspect, String aspectName) {
 
 		validate(aspectInstanceFactory.getAspectMetadata().getAspectClass());
-
+		// 判断这些方法是否有Pointcut表达式，从而过滤掉普通的方法
 		AspectJExpressionPointcut expressionPointcut = getPointcut(
 				candidateAdviceMethod, aspectInstanceFactory.getAspectMetadata().getAspectClass());
 		if (expressionPointcut == null) {

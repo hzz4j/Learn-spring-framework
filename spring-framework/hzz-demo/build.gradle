@@ -10,7 +10,16 @@ repositories {
 }
 
 dependencies{
+//    implementation project(":spring-context")
+    implementation("org.aspectj:aspectjweaver:1.9.5")
+    implementation("mysql:mysql-connector-java:8.0.11")
     implementation project(":spring-context")
+    implementation project(":spring-aop")
+    implementation project(":spring-tx")
+    implementation project(":spring-jdbc")
+
+//    compile group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.5'
+
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 
